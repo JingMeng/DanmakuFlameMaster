@@ -19,14 +19,14 @@ apply plugin: 'com.android.library'
 def SourcePath = 'src/main/'
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "26.0.2"
+    namespace 'master.flame.danmaku'
+    compileSdk 34
 
     defaultConfig {
-        minSdkVersion 9
-        targetSdkVersion 25
-        versionName VERSION_NAME
-        versionCode Integer.parseInt(VERSION_CODE)
+        minSdk 14
+        targetSdk 34
+        versionName '0.9.25'
+        versionCode 9025
     }
 
     sourceSets {
@@ -38,13 +38,7 @@ android {
         androidTest.setRoot("${SourcePath}../androidTest")
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_7
-        targetCompatibility JavaVersion.VERSION_1_7
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
     }
-}
-if (rootProject.file('gradle/gradle-mvn-push.gradle').exists()) {
-    apply from: rootProject.file('gradle/gradle-mvn-push.gradle')
-}
-if (rootProject.file('gradle/gradle-bintray-upload.gradle').exists()) {
-    apply from: rootProject.file('gradle/gradle-bintray-upload.gradle')
 }

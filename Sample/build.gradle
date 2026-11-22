@@ -17,26 +17,29 @@
 apply plugin: 'com.android.application'
 
 dependencies {
-    compile project(':ndkbitmap-armv5')
-    compile project(':ndkbitmap-armv7a')
-    compile project(':ndkbitmap-x86')
-    compile project(':DanmakuFlameMaster')
+    implementation project(':ndkbitmap-armv5')
+    implementation project(':ndkbitmap-armv7a')
+    implementation project(':ndkbitmap-x86')
+    implementation project(':DanmakuFlameMaster')
 
-    compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
+    implementation 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
 //    compile 'tv.danmaku.ijk.media:ijkplayer-arm64:0.6.2'
 }
 android {
-    compileSdkVersion 25
-    buildToolsVersion "26.0.2"
+    namespace 'com.sample'
+    compileSdk 34
 
     defaultConfig {
-        minSdkVersion 9
-        targetSdkVersion 25
+        minSdk 14
+        targetSdk 34
         versionCode 1
         versionName "1.0"
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_7
-        targetCompatibility JavaVersion.VERSION_1_7
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
     }
 }
+
+
+
